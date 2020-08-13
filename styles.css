@@ -1,0 +1,26 @@
+
+#container
+{   
+    width:60%;
+}
+#address_and_buttons_div
+{   
+    margin-top: 5%;
+    width:40%;
+}
+#ping_window_div
+{   
+    margin-top: 5%;
+    border-style: solid;
+    border-width: thin;
+    border-color:rgb(170, 170, 170);
+    width:55%;
+    height: 70vh;
+    overflow: auto;
+    padding-left: 5%;
+}
+.center_pos
+{
+    margin-left: auto;
+    margin-right: auto;
+}
