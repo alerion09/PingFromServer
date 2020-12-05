@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 $address = $_POST ['p_address'];
 exec('ping '.$address, $output, $status);
 

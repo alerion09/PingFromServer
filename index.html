@@ -8,26 +8,20 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div id="container" class="center_pos">
-        <div id="address_and_buttons_div" class="center_pos">
-            <div id="address_div">
-                <table>
-                    <tr>
-                        <td><p>Podaj adres:</p></td>
-                        <td><input type="text" id="insert_address" name="address" autocomplete="on"/></td>
-                    </tr>
-                </table>
+    <div class="container">
+        <header>
+            <span>Podaj adres:</span>
+            <input type="text" class="insert_address" name="address" autocomplete="on"/>
+        </header>
+        <section class="first_section">
+            <div class="buttons">
+                <button class="ping_button">Ping</button>
+                <button class="stop_button">Zatrzymaj</button>
             </div>
-            <div id="buttons_div">
-                <tr>
-                    <td><button id="ping_button">Ping</button></td>
-                    <td><button id="stop_button">Zatrzymaj</button></td>
-                </tr> 
-            </div>
-        </div>    
-        <div id="ping_window_div" class="center_pos">
-            
-        </div>
+        </section> 
+        <section class="second_section">
+            <div class="ping_window_div"></div>
+        </section> 
     </div>
 </body>
 </html>

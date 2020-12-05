@@ -3,31 +3,31 @@ var repeat_ping_ajax;
 //FUNKCJA STARTOWA....................................
 function appStart()
 {
-    var ping_button = document.getElementById("ping_button");
-    var stop_button = document.getElementById("stop_button"); 
+    var ping_button = document.querySelector(".ping_button");
+    var stop_button = document.querySelector(".stop_button"); 
     ping_button.addEventListener("click", run_interval, false); //wydarzenie butona PING
     stop_button.addEventListener("click", stop_function, false);//wydarzenie butona STOP
     
-    document.getElementById("insert_address").addEventListener("keyup", function(event) //funkcja pozwalajaca wcisnac button Enterem
+    document.querySelector(".insert_address").addEventListener("keyup", function(event) //funkcja pozwalajaca wcisnac button Enterem
     {
         if (event.keyCode === 13)
         {
             event.preventDefault();
-            document.getElementById("ping_button").click();
+            document.querySelector(".ping_button").click();
         }
     });
 }//....................................................
 //FUNKCJE..............................................
 function run_interval()     //funkcja wykonujaca ping
 {   
+    var ping_button = document.querySelector(".ping_button");
     repeat_scroll = setInterval(updateScroll,500);
     ping_button.disabled = true; //zmiana buttona ping na wylaczony
-    document.getElementById("ping_window_div").innerHTML=(""); //kasowanie zawartosci okna
+    document.querySelector(".ping_window_div").innerHTML=(""); //kasowanie zawartosci okna
     loop_index = 1;     
-    let address_value = document.getElementById("insert_address").value;    //przypisywanie wartosci wpisanego adresu
+    let address_value = document.querySelector(".insert_address").value;    //przypisywanie wartosci wpisanego adresu
     repeat_ping_ajax = setInterval(function()       //interwal do pingu 
     {   
-        console.log("Ping " + address_value);  
         $.ajax({
             type: "POST",
             url: "http://localhost/index.php",
@@ -37,23 +37,22 @@ function run_interval()     //funkcja wykonujaca ping
             },
             success: function (data) 
             {   
-                console.log(data);
+                console.log("start ajax.");
                 var ping_result=(data);
                 var object_ping_result = JSON.parse(ping_result); 
-                console.log(object_ping_result);
                   //zamiana odpowiedzi z serwera w obiekt
                 if (loop_index == 1)                                
                 {   
                     for (var i = 0, len = 6; i < len; i++)          //wyswietlenie poczatkowych 5 wierszy ping
                     {
-                        document.getElementById("ping_window_div").innerHTML+=(object_ping_result[i]+"</br>");
+                        document.querySelector(".ping_window_div").innerHTML+=(object_ping_result[i]+"</br>");
                     }
                     loop_index ++;
                 }else if (loop_index > 1)                           //wyswietlenie kolejnych 4 wierszy ping
                 {
                     for (var i = 2, len = 6; i < len; i++)
                     {
-                        document.getElementById("ping_window_div").innerHTML+=(object_ping_result[i]+"</br>");
+                        document.querySelector(".ping_window_div").innerHTML+=(object_ping_result[i]+"</br>");
                     }
                 }else
                 console.log("Run php - Success ajax function");
@@ -69,7 +68,8 @@ function run_interval()     //funkcja wykonujaca ping
         }, 3000);
 }
 function stop_function()        //funkcja zatrzymania pingowania
-{
+{   
+    var ping_button = document.querySelector(".ping_button");
     console.log('stop');
     clearInterval(repeat_ping_ajax);       //kasowanie interwalu
     setTimeout(stop_repeat_scroll,5000);    //wylacz autoscroll po 5 sekundach
@@ -78,7 +78,7 @@ function stop_function()        //funkcja zatrzymania pingowania
 }
 function updateScroll()             //funkcja autoscrollowania
 {
-    var ping_window = document.getElementById("ping_window_div");
+    var ping_window = document.querySelector(".ping_window_div");
     ping_window.scrollTop = ping_window.scrollHeight;
 }
 function stop_repeat_scroll()       //funkcja anulujaca autoscrollowanie

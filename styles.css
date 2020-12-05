@@ -1,26 +1,82 @@
-
-#container
-{   
-    width:60%;
+html
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
-#address_and_buttons_div
+body
 {   
-    margin-top: 5%;
-    width:40%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(34, 34, 34);
+    color: whitesmoke;
 }
-#ping_window_div
+button
 {   
-    margin-top: 5%;
-    border-style: solid;
-    border-width: thin;
-    border-color:rgb(170, 170, 170);
-    width:55%;
-    height: 70vh;
+    width: 30%;
+    height: 100%;
+    border-style: none;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: teal;
+}
+.container
+{   
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section
+{   
+    margin-top: 2%;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+header
+{   
+    margin-top: 2%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.first_section
+{
+    height: 10%;
+    width: 100%;
+}
+.second_section
+{
+    height: 65%;
+}
+.buttons
+{      
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.ping_window_div
+{   
+    height: 100%;
+    width:90%;
+    background-color: rgb(44, 44, 44);
+    border-style: none;
     overflow: auto;
     padding-left: 5%;
 }
-.center_pos
-{
-    margin-left: auto;
-    margin-right: auto;
+.insert_address
+{   
+    height: 40%;
+    border-style: none;
+    color: whitesmoke;
+    background-color: rgb(44, 44, 44);
 }
