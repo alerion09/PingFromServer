@@ -1,5 +1,5 @@
 # PingFromServer
-You could add php file on your server machine and run this app on your pc or smartphone then you can ping some addresses from your server.
+You can add php file on your server machine and run this app on your pc or smartphone, then you can ping some addresses from your server.
 <br />
 Created using HTML, CSS , JavaScript, PHP.
 <br />
