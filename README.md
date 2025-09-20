@@ -1,5 +1,6 @@
+> Early-stage project created before my commercial experience.
 # PingFromServer
-You can add php file on your server machine and run this app on your pc or smartphone, then you can ping some addresses from your server.
+Upload the PHP file to your server and run the app on your PC or smartphone to ping addresses from it.
 <br />
 Used technology: HTML5, CSS3, JavaScript, PHP.
 <br />
